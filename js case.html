@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>oddishOrEvenish</title>
+    </head>
+    <div class="container">
+     <label>SAYI : </label>
+    <input type="number" id="number">
+  
+    <button id="button">SONUÇ</button>
+
+    <div id="sonuc"></div>
+    
+    </div>
+           
+    <script>
+        var sayi=document.querySelector("#number");
+        var sonuc=document.querySelector("#sonuc");
+        var btn=document.querySelector("#button");
+        
+        btn.onclick=function(){
+            var index = 0,sum=0;
+            var num=Number(sayi.value);
+            while(num != 0)
+            {
+               sum=(num%10)+sum;
+               num =Math.floor(num / 10);
+                ++index;
+            }
+            
+            if(sum%2 == 0)
+                document.getElementById("sonuc").innerHTML =  " Sayının basamakları toplamı çift (Even).";
+            else
+            document.getElementById("sonuc").innerHTML = "Sayının basamakları toplamı tek (Odd).";
+        } 
+      
+    </script>
+        
+    </body>
+</html>
